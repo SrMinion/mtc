@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📋 Histórico de Avaliações</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .registro {
+      border: 2px solid #e9d5ff;
+      padding: 20px;
+      margin-bottom: 20px;
+      background: linear-gradient(145deg, #faf5ff 0%, #f3e8ff 100%);
+      border-radius: 15px;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .registro:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(139, 92, 246, 0.15);
+      border-color: #c4b5fd;
+    }
+    .registro strong {
+      color: #6b46c1;
+    }
+    .registro-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    #lista {
+        margin-top: 20px;
+    }
+    .delete-btn {
+        background: #ef4444;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 12px;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        opacity: 0.7;
+    }
+    .delete-btn:hover {
+        background: #dc2626;
+        opacity: 1;
+    }
+    .details-button {
+        background: #64748b;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 12px;
+        margin-top: 10px;
+        display: inline-block;
+    }
+    .details-button:hover {
+        background: #475569;
+    }
+    .detailed-content {
+        margin-top: 15px;
+        padding: 15px;
+        background: #fff;
+        border-radius: 8px;
+        border: 1px solid #e9d5ff;
+    }
+    .hidden {
+        display: none;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://celiamtc.euonline.com.br/wp-content/uploads/2025/01/cropped-celialogo.png" alt="Logo" class="logo">
+    <h1>📋 Histórico de Avaliações MTC</h1>
+    <nav class="main-nav">
+        <a href="index.html">Nova Avaliação</a>
+        <a href="historico.html">Histórico</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+        <h2>🔍 Buscar no Histórico</h2>
+        <input type="text" id="buscar" placeholder="Digite o nome do paciente para buscar..." />
+    </section>
+
+    <section id="lista-container">
+        <h2>📜 Registros Salvos</h2>
+        <div id="lista">
+            <p>Nenhuma avaliação encontrada. Crie uma na página de avaliação.</p>
+        </div>
+    </section>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const buscarInput = document.getElementById('buscar');
+        const listaDiv = document.getElementById('lista');
+        let __avaliacoes__ = [];
+
+        // Adicionando orgaoInfo para reconstruir relatórios
+        const orgaoInfo = {
+            'Fígado': 'Armazena o sangue, regula o fluxo do Qi e emoções como raiva e frustração. Relacionado à visão e tendões.',
+            'Baço': 'Transforma e transporta nutrientes e líquidos. Relacionado à digestão, músculos, concentração e preocupação.',
+            'Rim': 'Armazena a essência (Jing), controla crescimento, reprodução, ossos, audição e força de vontade. Emoção: medo.',
+            'Coração': 'Governa o sangue e abriga o Shen (mente). Relacionado à alegria, consciência e circulação.',
+            'Pulmão': 'Controla a respiração e o Qi. Rege a pele, a voz e as emoções como tristeza e melancolia.',
+            'Estômago': 'Responsável pela digestão e assimilação de alimentos. Trabalha com o Baço.',
+            'Vesícula Biliar': 'Armazena bile e auxilia na digestão. Relacionada à coragem e tomada de decisões.',
+            'Intestino Grosso': 'Elimina resíduos. Relacionado à clareza mental e capacidade de deixar ir.',
+            'Bexiga': 'Armazena e elimina urina. Relacionada à força de vontade e determinação.',
+            'Útero': 'Conectado ao Rim e ao Fígado. Responsável pela reprodução e ciclo menstrual.',
+            'Shen': 'Representa a mente, espírito e consciência. Abrigado no Coração, essencial para equilíbrio emocional.',
+            'Qi': 'Energia vital que circula pelo corpo. Fundamental para todas as funções orgânicas.',
+            'Yin': 'Aspecto nutritivo, refrescante e calmante da energia. Relacionado aos líquidos corporais.',
+            'Sangue': 'Nutre e umedece os tecidos. Relacionado à circulação e nutrição celular.'
+        };
+
+        function carregarAvaliacoes(filtroNome = '') {
+            try {
+                const avaliacoesSalvas = JSON.parse(localStorage.getItem('avaliacoesMTC')) || [];
+                __avaliacoes__ = avaliacoesSalvas;
+                const avaliacoesFiltradas = __avaliacoes__.filter(item => 
+                    item.nome.toLowerCase().includes(filtroNome.toLowerCase())
+                );
+
+                if (avaliacoesFiltradas.length === 0) {
+                    listaDiv.innerHTML = '<p>Nenhum registro encontrado para a sua busca.</p>';
+                    return;
+                }
+
+                listaDiv.innerHTML = avaliacoesFiltradas.sort((a, b) => b.id - a.id).map(item => `
+                    <div class="registro" data-id="${item.id}">
+                        <div class="registro-header">
+                            <h3>${item.nome}</h3>
+                            <button class="delete-btn" title="Excluir este registro">✖</button>
+                        </div>
+                        <p><strong>📅 Data:</strong> ${item.dataAvaliacao}</p>
+                        <p><strong>📊 Idade:</strong> ${item.idade}</p>
+                        <p><strong>🧠 Pontos por Sistema:</strong> ${formatarPontuacao(item.pontuacaoOrgaos)}</p>
+                        <p><strong>🧰 Técnicas:</strong> ${(item.tecnicasSelecionadas || []).join(', ') || 'Nenhuma'}</p>
+                        <button class="details-button">Ver Detalhes</button>
+                        <div class="detailed-content hidden"></div>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error("Erro ao carregar avaliações:", error);
+                listaDiv.innerHTML = '<p>Ocorreu um erro ao carregar o histórico.</p>';
+            }
+        }
+
+        function formatarPontuacao(pontuacao) {
+            if (!pontuacao || Object.keys(pontuacao).length === 0) {
+                return 'Nenhuma desarmonia pontuada.';
+            }
+            return Object.entries(pontuacao)
+                .sort(([, a], [, b]) => b - a)
+                .map(([orgao, pontos]) => `${orgao}: ${pontos}`)
+                .join('; ');
+        }
+        
+        function deletarAvaliacao(id) {
+            if (!confirm('Tem certeza que deseja excluir este registro? Esta ação não pode ser desfeita.')) {
+                return;
+            }
+            try {
+                let avaliacoes = JSON.parse(localStorage.getItem('avaliacoesMTC')) || [];
+                avaliacoes = avaliacoes.filter(item => item.id != id);
+                localStorage.setItem('avaliacoesMTC', JSON.stringify(avaliacoes));
+                carregarAvaliacoes(buscarInput.value); // Recarrega a lista
+            } catch (error) {
+                console.error("Erro ao deletar avaliação:", error);
+                alert('Ocorreu um erro ao tentar deletar o registro.');
+            }
+        }
+        
+        function showDetails(button) {
+            const registroDiv = button.closest('.registro');
+            const detailDiv = registroDiv.querySelector('.detailed-content');
+            const id = registroDiv.dataset.id;
+            const avaliacao = __avaliacoes__.find(av => av.id == id);
+
+            if (!avaliacao) return;
+
+            if (button.textContent === "Ver Detalhes") {
+                let content = '';
+                content += '<h3>🧭 Avaliação Energética Gerada</h3>';
+                content += generatePatientInfoHTML(avaliacao);
+                content += generateAnomaliesHTML(avaliacao.sintomas);
+                content += generateDiagnosisHTML(avaliacao.sintomasDetalhados, avaliacao.pontuacaoOrgaos, orgaoInfo);
+                content += generateOrganScoreHTML(avaliacao.pontuacaoOrgaos, orgaoInfo);
+                // O plano terapêutico é mais complexo e pode ser adicionado aqui se necessário.
+                
+                detailDiv.innerHTML = content;
+                detailDiv.classList.remove('hidden');
+                button.textContent = "Ocultar Detalhes";
+            } else {
+                detailDiv.classList.add('hidden');
+                detailDiv.innerHTML = '';
+                button.textContent = "Ver Detalhes";
+            }
+        }
+        
+        // Funções de Geração de HTML (copiadas/adaptadas do script.js)
+        function generatePatientInfoHTML(data) {
+             return `
+                <div id="dados-paciente-resultado">
+                    <h3>📋 Dados do Paciente</h3>
+                    <p><strong>👤 Nome:</strong> ${data.nome}</p>
+                    <p><strong>🎂 Data de Nascimento:</strong> ${new Date(data.dataNascimento).toLocaleDateString('pt-BR')}</p>
+                    <p><strong>📊 Idade:</strong> ${data.idade}</p>
+                    <p><strong>💼 Profissão:</strong> ${data.profissao || 'Não informado'}</p>
+                    <p><strong>⚧ Sexo:</strong> ${data.sexo === 'mulher' ? '👩 Mulher' : '👨 Homem'}</p>
+                    <p><strong>📅 Data da Avaliação:</strong> ${data.dataAvaliacao}</p>
+                </div>
+            `;
+        }
+        function generateAnomaliesHTML(sintomas) {
+            if (!sintomas || sintomas.length === 0) return '<p>Nenhuma anomalia/sintoma encontrado.</p>';
+            return `
+                <div id="anomalias-sintomas">
+                    <h3>📋 Anomalias/Sintomas Encontrados</h3>
+                    <ul>${sintomas.map(s => `<li>${s}</li>`).join('')}</ul>
+                </div>
+            `;
+        }
+        function generateDiagnosisHTML(sintomasDetalhados, pontuacao, info) {
+            if (!sintomasDetalhados || sintomasDetalhados.length === 0) return '';
+            const orgaoMaisAfetado = Object.keys(pontuacao).length > 0 ? Object.keys(pontuacao).reduce((a, b) => pontuacao[a] > pontuacao[b] ? a : b) : null;
+            if (!orgaoMaisAfetado) return '';
+            
+            let interpretacao = `
+                <div id="diagnostico-interpretacao" class="diagnostico-texto">
+                    <h3>🔍 Interpretação Diagnóstica</h3>
+                    <p><strong>🎯 Órgão mais afetado:</strong> ${orgaoMaisAfetado} (${pontuacao[orgaoMaisAfetado]} pontos)</p>
+                    ${info[orgaoMaisAfetado] ? `<p><strong>${orgaoMaisAfetado}:</strong> ${info[orgaoMaisAfetado]}</p>` : ''}
+                    <h4>🔬 Padrões Identificados:</h4>
+                    <ul>${sintomasDetalhados.slice(0, 5).map(item => `<li><strong>${item.sintoma.split(' ')[0]}:</strong> ${item.diagnostico}</li>`).join('')}</ul>
+                </div>`;
+            return interpretacao;
+        }
+        function generateOrganScoreHTML(pontuacao, info) {
+            if (!pontuacao || Object.keys(pontuacao).length === 0) return '';
+            const orgaosOrdenados = Object.entries(pontuacao).sort(([,a], [,b]) => b - a).slice(0, 5);
+
+            let html = '<div id="pontuacao-orgao"><h3>🩺 Pontuação por Órgão/Sistema</h3>';
+            orgaosOrdenados.forEach(([orgao, pontos]) => {
+                html += `<div class="orgao-info"><p><strong>${orgao}:</strong> ${pontos} ponto(s)</p></div>`;
+            });
+            html += '</div>';
+            return html;
+        }
+
+        buscarInput.addEventListener('input', (e) => {
+            carregarAvaliacoes(e.target.value);
+        });
+        
+        listaDiv.addEventListener('click', (e) => {
+            if (e.target.classList.contains('delete-btn')) {
+                const registroDiv = e.target.closest('.registro');
+                if(registroDiv) {
+                    deletarAvaliacao(registroDiv.dataset.id);
+                }
+            }
+            if (e.target.classList.contains('details-button')) {
+                showDetails(e.target);
+            }
+        });
+
+        carregarAvaliacoes();
+    });
+  </script>
+</body>
+</html>
