@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌸 Ficha de Avaliação com Técnicas Milenares Chinesas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="https://celiamtc.euonline.com.br/wp-content/uploads/2025/01/cropped-celialogo.png" alt="Logo" class="logo">
+        <h1>🌸 Ficha de Avaliação com Técnicas Milenares Chinesas 🌸</h1>
+        <p style="margin-top: 10px; font-size: 1.1em; opacity: 0.9;">✨ Desenvolvido por Maylson Carvalho ✨</p>
+        <nav class="main-nav">
+            <a href="index.html">Nova Avaliação</a>
+            <a href="painel.html">Painel do Terapeuta</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="dados-paciente">
+            <h2>📝 Dados do Paciente</h2>
+            <label for="nome">👤 Nome:</label>
+            <input type="text" id="nome" required placeholder="Digite o nome completo">
+
+            <label for="data-nascimento">🎂 Data de Nascimento:</label>
+            <input type="date" id="data-nascimento" required>
+
+            <label for="idade">📊 Idade:</label>
+            <input type="text" id="idade" readonly placeholder="Calculada automaticamente">
+
+            <label for="profissao">💼 Profissão:</label>
+            <input type="text" id="profissao" placeholder="Digite a profissão">
+
+            <label for="sexo">⚧ Sexo:</label>
+            <select id="sexo" required>
+                <option value="">Selecione o sexo</option>
+                <option value="mulher">👩 Mulher</option>
+                <option value="homem">👨 Homem</option>
+            </select>
+
+            <label for="data-avaliacao">📅 Data da Avaliação:</label>
+            <input type="text" id="data-avaliacao" readonly>
+        </section>
+
+        <section id="ficha-completa">
+            <h2>📋 Ficha Completa de Avaliação MTC</h2>
+
+            <h3>🌡️ Frio / Calor</h3>
+            <div id="frio-calor-sintomas">
+                <label><input type="checkbox" data-orgao="Rim" data-descricao="Frio patógeno severo que penetrou profundamente. Dano: Frio por Excesso."> ❄️ E Hang (Frio severo)</label><br>
+                <label><input type="checkbox" data-orgao="Baço,Rim" data-descricao="Frio interno por deficiência energética. Dano: Deficiência de Yang Qi."> 🧊 Wei Hang (Deficiência Yang)</label><br>
+                <label><input type="checkbox" data-orgao="Pulmão" data-descricao="Exterior invadido por frio patógeno. Dano: Invasão de vento-frio."> 🥶 Calafrio forte e febre leve</label><br>
+                <label><input type="checkbox" data-orgao="Estômago" data-descricao="Calor penetrou profundamente. Dano: Calor interno."> 🔥 Calafrio leve e febre forte</label><br>
+                <label><input type="checkbox" data-orgao="Fígado,Yin" data-descricao="Fogo vazio do Fígado. Dano: Deficiência de Yin."> 🌙 Febre à noite</label><br>
+                <label><input type="checkbox" data-orgao="Baço" data-descricao="Calor em Jiao médio com fraqueza do Baço. Dano: Umidade Calor."> ☀️ Febre à tarde</label><br>
+                <label><input type="checkbox" data-orgao="Estômago,Intestino Grosso" data-descricao="Ativação do calor pleno no Yang Ming. Dano: Yang Ming em Calor."> 🕒 Febre entre 15h e 17h</label><br>
+                <label><input type="checkbox" data-orgao="Coração" data-descricao="Fogo do Coração em exuberância. Dano: Calor Excessivo."> 🔥 Febre severa</label><br>
+                <label><input type="checkbox" data-orgao="Qi" data-descricao="Qi fraco não sustenta a imunidade. Dano: Deficiência de Qi."> 🌡️ Febrícula</label><br>
+                <label><input type="checkbox" data-orgao="Estômago" data-descricao="Fogo interno ou Fleuma-Calor. Dano: Calor interno ou Fleuma."> 🔥 Calor sem febre</label><br>
+            </div>
+
+            <h3>💧 Suor</h3>
+            <div id="suor-sintomas">
+                <label><input type="checkbox" data-orgao="Pulmão" data-descricao="Sudorese fisiológica, regulação adequada do Qi do Pulmão. Dano: Nenhum (estado saudável)."> ✅ Suor Normal</label><br>
+                <label><input type="checkbox" data-orgao="Pulmão,Rim" data-descricao="Falta de fluidos que provoca ausência de suor. Dano: Deficiência de Líquidos (Jin Ye)."> 🚫 Anidrose - Deficiência de Líquidos</label><br>
+                <label><input type="checkbox" data-orgao="Pulmão" data-descricao="Bloqueio da superfície com ausência de suor. Dano: Invasão Externa de Vento-Frio."> ❄️ Anidrose - Por Vento-Frio</label><br>
+                <label><input type="checkbox" data-orgao="Pulmão" data-descricao="Sudorese excessiva relacionada ao ambiente. Dano: Excesso externo por fator climático."> 🌡️ Hiperidrose por Clima</label><br>
+                <label><input type="checkbox" data-orgao="Baço,Coração" data-descricao="Sudorese espontânea por energia insuficiente para conter fluidos. Dano: Deficiência de Qi."> 💧 Hiperidrose Espontânea</label><br>
+                <label><input type="checkbox" data-orgao="Rim,Baço" data-descricao="Sudorese noturna associada a calor vazio. Dano: Deficiência de Yin."> 🌙 Hiperidrose Noturna</label><br>
+                <label><input type="checkbox" data-orgao="Coração,Rim" data-descricao="Sudorese abundante associada a colapso energético. Dano: Excesso de Calor ou Colapso Yang."> 💦 Hiperidrose Profusa</label><br>
+                <label><input type="checkbox" data-orgao="Fígado,Baço" data-descricao="Vento-Fleuma ou Vento-Umidade (AVC) com suor anormal em metade do corpo."> ⚡ Suor em Metade do Corpo</label><br>
+                <label><input type="checkbox" data-orgao="Coração,Baço" data-descricao="Deficiência Qi do Coração e Baço com suor anormal no tórax."> 🫁 Suor no Tórax</label><br>
+                <label><input type="checkbox" data-orgao="Pulmão,Fígado" data-descricao="Invasão de Calor ou Acúmulo Umidade-Calor com suor anormal na cabeça ou cervical."> 🧠 Suor na Cabeça/Cervical</label><br>
+            </div>
+
+            <h3>🥤 Sede</h3>
+            <div id="sede-sintomas">
+                <label><input type="checkbox" data-orgao="" data-descricao="Equilíbrio hídrico corporal adequado. Dano: Nenhum."> ✅ Sede Normal</label><br>
+                <label><input type="checkbox" data-orgao="Baço,Rim" data-descricao="Falta de sede pode indicar retenção de umidade ou energia insuficiente para gerar sensação de sede. Dano: Frio, Umidade, Deficiência Qi."> 🚫 Ausência de Sede</label><br>
+                <label><input type="checkbox" data-orgao="Rim,Estômago,Subcórtex" data-descricao="Subtipos: Prefere bebidas frias (Calor excessivo), Xiao Ke (Diabetes Mellitus), Lesão de líquidos Jin Ye."> 🌊 Sede com Polidipsia</label><br>
+            </div>
+
+            <h3>🍽️ Fome</h3>
+            <div id="fome-sintomas">
+                <label><input type="checkbox" data-orgao="Estômago,Baço" data-descricao="Apetite e digestão normais. Dano: Nenhum (equilíbrio saudável)."> ✅ Fome Normal</label><br>
+                <label><input type="checkbox" data-orgao="Baço,Estômago" data-descricao="Redução da função digestiva e má absorção. Dano: Deficiência Qi, Umidade Patógena, Umidade-Calor, Retenção de alimentos."> 🚫 Anorexia (pouco apetite)</label><br>
+                <label><input type="checkbox" data-orgao="Estômago,Baço" data-descricao="Excesso de energia no Estômago ou desarmonia entre Estômago e Baço. Subtipos: Fome intensa, Estômago forte e Baço fraco."> 🍴 Polifagia (fome intensa)</label><br>
+                <label><input type="checkbox" data-orgao="Estômago Yin" data-descricao="Deficiência Yin do Estômago com fome, mas pouca ingestão ou dificuldade digestiva."> 🤏 Fome sem Polifagia</label><br>
+            </div>
+
+            <h3>🚽 Micção</h3>
+            <div id="miccao-sintomas">
+                <label><input type="checkbox" data-orgao="Rim,Bexiga" data-descricao="Função urinária normal, sem dano."> ✅ Micção Normal</label><br>
+                <label><input type="checkbox" data-orgao="Bexiga,Rim" data-descricao="Distúrbios na função urinária por calor ou deficiência Yang."> 🔄 Polaciúria (frequência aumentada)</label><br>
+                <label><input type="checkbox" data-orgao="Bexiga,Rim,Baço" data-descricao="Dor ou dificuldade ao urinar."> 😣 Disúria (dor ao urinar)</label><br>
+                <label><input type="checkbox" data-orgao="Rim,Fígado,Baço,Bexiga" data-descricao="Cor da urina indica padrão energético."> 🎨 Alteração na Cor da Urina</label><br>
+                <label><input type="checkbox" data-orgao="Rim,Baço,Pulmão" data-descricao="Volume urinário alterado."> 📊 Alteração no Volume Urinário</label><br>
+                <label><input type="checkbox" data-orgao="Rim" data-descricao="Sensações associadas à micção."> 💫 Sensações Anormais na Micção</label><br>
+            </div>
+
+            <h3>💩 Evacuação</h3>
+            <div id="evacuacao-sintomas">
+                <label><input type="checkbox" data-orgao="Intestino Grosso,Baço" data-descricao="Função intestinal normal, sem dano."> ✅ Evacuação Normal</label><br>
+                <label><input type="checkbox" data-orgao="Baço,Estômago,Fígado,Rim,Intestino Grosso,Sangue" data-descricao="Alterações na forma e textura das fezes."> 🔄 Alterações na Forma/Textura</label><br>
+                <label><input type="checkbox" data-orgao="Intestino Grosso,Estômago,Rim,Fígado,Vesícula Biliar,Baço,Pulmão,Sangue" data-descricao="Frequência alterada: constipação ou diarreia."> 📊 Alterações na Frequência</label><br>
+            </div>
+
+            <h3>😴 Insônia / Sonolência</h3>
+            <div id="insonia-sonolencia-sintomas">
+                <h4>🌙 Insônia</h4>
+                <label><input type="checkbox" data-orgao="Coração,Rim" data-dano="Deficiência Yin do Rim e Coração" data-diagnostico="Insônia inicial por deficiência de Yin do Rim e desarmonia do Coração."> 🛏️ Insônia Inicial (não consegue dormir)</label><br>
+                <label><input type="checkbox" data-orgao="Baço,Coração" data-dano="Deficiência Qi do Baço e Coração" data-diagnostico="Insônia intermitente com acordar frequente."> 🔄 Insônia Intermitente (acorda várias vezes)</label><br>
+                <label><input type="checkbox" data-orgao="Coração,Vesícula Biliar" data-dano="Deficiência Qi do Coração e Vesícula Biliar" data-diagnostico="Insônia com pesadelos e sono agitado."> 👻 Insônia com Pesadelos</label><br>
+                <label><input type="checkbox" data-orgao="Estômago,Baço" data-dano="Acúmulo de alimentos, Estagnação de Qi" data-diagnostico="Insônia grave por excesso."> 🚫 Insônia Grave (não dorme)</label><br>
+                <label><input type="checkbox" data-orgao="Fígado" data-dano="Excesso de Fogo do Fígado" data-diagnostico="Sono agitado por hiperatividade do fogo do Fígado."> 🔥 Sono Agitado (Fogo do Fígado)</label><br>
+                <label><input type="checkbox" data-orgao="Coração" data-dano="Fleuma-Calor bloqueando o Coração" data-diagnostico="Ansiedade extrema e insônia severa."> 😰 Ansiedade Extrema (Fleuma-Calor)</label><br>
+                
+                <h4>😴 Sonolência</h4>
+                <label><input type="checkbox" data-orgao="Baço" data-dano="Deficiência de Qi do Baço" data-diagnostico="Sonolência constante por deficiência do Baço."> 😴 Sonolência o Dia Todo</label><br>
+                <label><input type="checkbox" data-orgao="Baço,Estômago" data-dano="Deficiência Qi do Baço e Estômago" data-diagnostico="Sonolência pós-prandial."> 🍽️ Sonolência Após Almoço</label><br>
+                <label><input type="checkbox" data-orgao="Coração,Rim" data-dano="Deficiência Yang do Coração e Rim" data-diagnostico="Cansaço extremo em idosos."> 👴 Cansaço Extremo (Idosos)</label><br>
+                <label><input type="checkbox" data-orgao="Yin,Sangue" data-dano="Lesão do Yin e do Sangue" data-diagnostico="Sonolência pós-enfermidade."> 🤒 Sonolência Pós-Doença</label><br>
+            </div>
+
+            <h3>🧠 Emoção</h3>
+            <div id="emocao-sintomas">
+                <label><input type="checkbox" data-orgao="Fígado" data-dano="Estagnação ou Excesso de Qi do Fígado" data-diagnostico="Ira frequente, explosões de raiva."> 😡 Ira / Raiva</label><br>
+                <label><input type="checkbox" data-orgao="Rim" data-dano="Deficiência de Yin ou Yang do Rim" data-diagnostico="Medo e ansiedade constantes."> 😨 Medo / Ansiedade</label><br>
+                <label><input type="checkbox" data-orgao="Coração" data-dano="Excesso de Fogo do Coração" data-diagnostico="Alegria excessiva, euforia e agitação mental."> 😄 Alegria Excessiva / Euforia</label><br>
+                <label><input type="checkbox" data-orgao="Baço" data-dano="Deficiência de Qi do Baço" data-diagnostico="Pensamento repetitivo, preocupação constante."> 😟 Preocupação / Pensamento Excessivo</label><br>
+                <label><input type="checkbox" data-orgao="Pulmão" data-dano="Deficiência ou Estagnação do Qi do Pulmão" data-diagnostico="Humor deprimido, peso no peito."> 😢 Tristeza / Melancolia</label><br>
+            </div>
+
+            <!-- Campos específicos para Mulher -->
+            <div id="campos-mulher" class="hidden">
+                <h3>👩 Mulher - Aspectos Ginecológicos</h3>
+                
+                <h4>🌸 Ciclo Menstrual</h4>
+                <label><input type="checkbox" data-orgao="Fígado,Baço,Rim" data-dano="Nenhum" data-diagnostico="Ciclo regular, fluxo equilibrado."> ✅ Ciclo Normal (28-30 dias)</label><br>
+                <label><input type="checkbox" data-orgao="Fígado,Sangue" data-dano="Calor no Sangue ou Deficiência de Qi" data-diagnostico="Menstruação antecipada."> ⏰ Ciclo Adiantado (menos de 21 dias)</label><br>
+                <label><input type="checkbox" data-orgao="Sangue,Rim" data-dano="Deficiência de Sangue ou Frio no Sangue" data-diagnostico="Menstruação atrasada."> ⏳ Ciclo Atrasado (mais de 35 dias)</label><br>
+                <label><input type="checkbox" data-orgao="Fígado,Rim" data-dano="Estagnação de Qi do Fígado ou Deficiência do Rim" data-diagnostico="Ciclo irregular."> 🔄 Ciclo Irregular</label><br>
+
+                <h4>🩸 Volume e Características do Sangramento</h4>
+                <label><input type="checkbox" data-orgao="" data-dano="" data-diagnostico="Volume normal."> ✅ Volume Normal (3-5 dias)</label><br>
+                <label><input type="checkbox" data-orgao="Baço,Rim" data-dano="Deficiência de Sangue ou Rim" data-diagnostico="Fluxo reduzido."> 🔻 Hipomenorreia (fluxo escasso)</label><br>
+                <label><input type="checkbox" data-orgao="Coração,Fígado" data-dano="Calor no Sangue ou Estagnação" data-diagnostico="Fluxo abundante."> 🔺 Hipermenorreia (fluxo abundante)</label><br>
+                <label><input type="checkbox" data-orgao="Fígado" data-dano="Estagnação de Sangue" data-diagnostico="Presença de coágulos."> 🩸 Coágulos Menstruais</label><br>
+                <label><input type="checkbox" data-orgao="Fígado,Rim" data-dano="Estagnação ou Deficiência" data-diagnostico="Sangramento entre ciclos."> 🔴 Metrorragia (sangramento irregular)</label><br>
+
+                <h4>😣 Dismenorreia (Cólicas)</h4>
+                <label><input type="checkbox" data-orgao="Rim,Baço,Fígado" data-dano="Deficiência Yang do Rim" data-diagnostico="Cólicas por deficiência."> ❄️ Cólicas por Deficiência (melhora com calor)</label><br>
+                <label><input type="checkbox" data-orgao="Fígado,Baço" data-dano="Estagnação de Qi e Sangue" data-diagnostico="Cólicas por excesso."> 🔥 Cólicas por Excesso (piora com pressão)</label><br>
+
+                <h4>🚫 Amenorreia</h4>
+                <label><input type="checkbox" data-orgao="Rim,Fígado" data-dano="Deficiência de Sangue e Essência" data-diagnostico="Amenorreia por deficiência."> 📉 Amenorreia por Deficiência</label><br>
+                <label><input type="checkbox" data-orgao="Fígado,Baço" data-dano="Estagnação de Qi e Sangue" data-diagnostico="Amenorreia por excesso."> 📈 Amenorreia por Excesso</label><br>
+
+                <h4>🌸 Síndrome Pré-Menstrual e Outros</h4>
+                <label><input type="checkbox" data-orgao="Fígado" data-dano="Estagnação de Qi do Fígado" data-diagnostico="TPM com irritabilidade."> 😤 TPM - Irritabilidade</label><br>
+                <label><input type="checkbox" data-orgao="Baço" data-dano="Deficiência de Qi do Baço" data-diagnostico="TPM com inchaço."> 🎈 TPM - Inchaço/Retenção</label><br>
+                <label><input type="checkbox" data-orgao="Coração" data-dano="Deficiência de Sangue" data-diagnostico="TPM com ansiedade."> 😰 TPM - Ansiedade</label><br>
+                <label><input type="checkbox" data-orgao="Pulmão" data-dano="Deficiência de Qi" data-diagnostico="TPM com tristeza."> 😢 TPM - Tristeza</label><br>
+
+                <h4>🤱 Histórico Reprodutivo</h4>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 15px 0;">
+                    <label>👶 Número de Gestações: <input type="number" id="num-gestacoes" min="0" placeholder="0"></label>
+                    <label>💔 Número de Abortos: <input type="number" id="num-abortos" min="0" placeholder="0"></label>
+                    <label>🌸 Idade da Menarca: <input type="number" id="idade-menarca" min="8" max="18" placeholder="12"></label>
+                    <label>❤️ Frequência Sexual (vezes/semana): <input type="number" id="freq-sexual-mulher" min="0" placeholder="0"></label>
+                </div>
+                
+                <h4>🌅 Menopausa</h4>
+                <label><input type="checkbox" id="menopausa" data-orgao="Rim" data-dano="Deficiência de Yin e Yang do Rim" data-diagnostico="Sintomas da menopausa."> 🌅 Menopausa</label><br>
+                <label><input type="checkbox" data-orgao="Rim,Coração" data-dano="Deficiência de Yin" data-diagnostico="Ondas de calor."> 🔥 Ondas de Calor</label><br>
+                <label><input type="checkbox" data-orgao="Coração,Rim" data-dano="Deficiência de Yin" data-diagnostico="Suores noturnos."> 🌙 Suores Noturnos</label><br>
+                <label><input type="checkbox" data-orgao="Rim" data-dano="Deficiência de Yang" data-diagnostico="Secura vaginal."> 🏜️ Secura Vaginal</label><br>
+                <label><input type="checkbox" data-orgao="Rim" data-dano="Deficiência de Essência" data-diagnostico="Diminuição da libido."> 💔 Diminuição da Libido</label><br>
+            </div>
+
+            <!-- Campos específicos para Homem -->
+            <div id="campos-homem" class="hidden">
+                <h3>👨 Homem - Aspectos Andrológicos</h3>
+                
+                <h4>🌱 Fertilidade e Reprodução</h4>
+                <label><input type="checkbox" data-orgao="Rim,Fígado" data-dano="Deficiência de Yin/Yang do Rim" data-diagnostico="Dificuldades de fertilidade."> 🌱 Problemas de Fertilidade</label><br>
+                <label><input type="checkbox" data-orgao="Rim" data-dano="Deficiência de Essência do Rim" data-diagnostico="Baixa qualidade do esperma."> 🧬 Alterações no Esperma</label><br>
+                <label><input type="checkbox" data-orgao="Rim,Fígado" data-dano="Estagnação de Qi" data-diagnostico="Dificuldade de ereção."> 🚫 Disfunção Erétil</label><br>
+                <label><input type="checkbox" data-orgao="Coração,Rim" data-dano="Deficiência de Yang" data-diagnostico="Ejaculação precoce."> ⚡ Ejaculação Precoce</label><br>
+                <label><input type="checkbox" data-orgao="Rim" data-dano="Deficiência de Yin" data-diagnostico="Ejaculação retardada."> ⏳ Ejaculação Retardada</label><br>
+
+                <h4>❤️ Libido e Frequência Sexual</h4>
+                <label><input type="checkbox" data-orgao="Rim,Coração,Fígado" data-dano="Deficiência do Rim" data-diagnostico="Baixa libido."> 💔 Baixa Libido</label><br>
+                <label><input type="checkbox" data-orgao="Fígado" data-dano="Estagnação de Qi" data-diagnostico="Libido irregular."> 🔄 Libido Irregular</label><br>
+                <label><input type="checkbox" data-orgao="Coração" data-dano="Excesso de Fogo" data-diagnostico="Libido excessiva."> 🔥 Libido Excessiva</label><br>
+                
+                <div style="margin: 15px 0;">
+                    <label>❤️ Frequência Sexual (vezes/semana): <input type="number" id="freq-sexual-homem" min="0" placeholder="0"></label>
+                </div>
+
+                <h4>💪 Vitalidade e Energia Sexual</h4>
+                <label><input type="checkbox" data-orgao="Rim" data-dano="Deficiência de Yang" data-diagnostico="Fadiga sexual."> 😴 Fadiga Sexual</label><br>
+                <label><input type="checkbox" data-orgao="Rim,Baço" data-dano="Deficiência de Qi" data-diagnostico="Falta de energia sexual."> ⚡ Falta de Energia Sexual</label><br>
+                <label><input type="checkbox" data-orgao="Coração" data-dano="Deficiência de Sangue" data-diagnostico="Ansiedade de performance."> 😰 Ansiedade de Performance</label><br>
+
+                <h4>🏃 Aspectos Físicos</h4>
+                <label><input type="checkbox" data-orgao="Rim" data-dano="Deficiência de Yang" data-diagnostico="Próstata aumentada."> 🔍 Problemas de Próstata</label><br>
+                <label><input type="checkbox" data-orgao="Fígado" data-dano="Estagnação de Qi" data-diagnostico="Dor testicular."> 😣 Dor Testicular</label><br>
+                <label><input type="checkbox" data-orgao="Rim" data-dano="Deficiência de Yin" data-diagnostico="Emissões noturnas."> 🌙 Emissões Noturnas</label><br>
+            </div>
+
+            <h3>🧘‍♀️ Shen (Espírito) - Inspeção Física e Mental</h3>
+<div id="shen-espirito-sintomas">
+  <h4>👁️ Inspeção Geral</h4>
+  <label><input type="checkbox" id="face-azulada" data-orgao="Pulmão,Rim" data-dano="Deficiência de Yang" data-diagnostico="Face azulada, indicando frio e deficiência energética." /> Face azulada</label><br>
+  <label><input type="checkbox" id="face-avermeilhada" data-orgao="Coração" data-dano="Calor no Sangue" data-diagnostico="Face avermelhada, sinal de calor e inflamação." /> Face avermelhada</label><br>
+  <label><input type="checkbox" id="face-amarelada" data-orgao="Baço" data-dano="Deficiência de Qi" data-diagnostico="Face amarelada, indica deficiência do Baço e estagnação." /> Face amarelada</label><br>
+  <label><input type="checkbox" id="face-palida" data-orgao="Coração,Baço" data-dano="Deficiência de Sangue/Qi" data-diagnostico="Face pálida, sugere deficiência sanguínea e de energia." /> Face pálida</label><br>
+  <label><input type="checkbox" id="face-escurecida" data-orgao="Rim" data-dano="Estagnação de Sangue" data-diagnostico="Face escurecida, indicando estagnação ou frio intenso." /> Face escurecida</label><br>
+
+  <h4>💪 Constituição Física Frágil</h4>
+  <label><input type="checkbox" id="corpo-emagrecido" data-orgao="Baço" data-dano="Deficiência de Qi" data-diagnostico="Corpo emagrecido, sinal de deficiência energética." /> Corpo emagrecido</label><br>
+  <label><input type="checkbox" id="corpo-inchado" data-orgao="Baço,Rim" data-dano="Retenção de Umidade" data-diagnostico="Corpo inchado, indicativo de umidade ou deficiência renal." /> Corpo inchado</label><br>
+  <label><input type="checkbox" id="musculatura-flacida" data-orgao="Baço" data-dano="Deficiência de Qi" data-diagnostico="Musculatura flácida, sinal de deficiência do Baço." /> Musculatura flácida</label><br>
+  <label><input type="checkbox" id="falta-tono" data-orgao="Fígado" data-dano="Deficiência de Sangue" data-diagnostico="Falta de tônus muscular, relacionada à deficiência de sangue." /> Falta de tônus</label><br>
+
+  <h4>👁️ Olhar Sem Brilho</h4>
+  <label><input type="checkbox" id="olhos-opacos" data-orgao="Coração" data-dano="Deficiência de Sangue" data-diagnostico="Olhos opacos, refletindo deficiência sanguínea." /> Olhos opacos</label><br>
+  <label><input type="checkbox" id="dificuldade-foco" data-orgao="Fígado" data-dano="Estagnação de Qi" data-diagnostico="Dificuldade de foco, associada à estagnação do Qi do Fígado." /> Dificuldade de foco visual</label><br>
+  <label><input type="checkbox" id="olhar-vago" data-orgao="Coração" data-dano="Deficiência de Sangue" data-diagnostico="Olhar vago ou perdido, sinal de deficiência de sangue e espírito disperso." /> Olhar vago ou perdido</label><br>
+
+  <h4>⏰ Envelhecimento Precoce</h4>
+  <label><input type="checkbox" id="rugas-acentuadas" data-orgao="Pulmão,Rim" data-dano="Deficiência de Yin" data-diagnostico="Rugas precoces, indicando deficiência de Yin." /> Rugas acentuadas cedo</label><br>
+  <label><input type="checkbox" id="cabelos-grisalhos" data-orgao="Rim" data-dano="Deficiência de Yin" data-diagnostico="Cabelos grisalhos precocemente, sinal de deficiência renal." /> Cabelos grisalhos precocemente</label><br>
+  <label><input type="checkbox" id="fraqueza-ossea" data-orgao="Rim" data-dano="Deficiência de Yang" data-diagnostico="Fraqueza óssea, relacionada à deficiência renal e Yang." /> Fraqueza óssea prematura</label><br>
+
+  <h4>👄 Inspeção Regional - Lábios</h4>
+  <label><input type="checkbox" id="labios-palidos" data-orgao="Coração" data-dano="Deficiência de Sangue" data-diagnostico="Lábios pálidos, reflexo de deficiência sanguínea." /> Lábios pálidos</label><br>
+  <label><input type="checkbox" id="labios-roxos" data-orgao="Pulmão" data-dano="Estase de Sangue" data-diagnostico="Lábios roxos, indicando estase sanguínea." /> Lábios roxos</label><br>
+  <label><input type="checkbox" id="labios-ressecados" data-orgao="Pulmão" data-dano="Deficiência de Yin" data-diagnostico="Lábios ressecados, sinal de deficiência de Yin pulmonar." /> Lábios ressecados</label><br>
+  <label><input type="checkbox" id="labios-tremendo" data-orgao="Coração" data-dano="Deficiência de Sangue" data-diagnostico="Lábios tremendo, associado à deficiência sanguínea." /> Lábios tremendo</label><br>
+
+  <h4>👁️ Inspeção Regional - Olhos</h4>
+  <label><input type="checkbox" id="olhos-vermelhos" data-orgao="Fígado,Coração" data-dano="Calor no Fígado" data-diagnostico="Olhos vermelhos, sinal de calor no fígado ou coração." /> Olhos vermelhos</label><br>
+  <label><input type="checkbox" id="olhos-amarelados" data-orgao="Fígado" data-dano="Calor no Fígado" data-diagnostico="Olhos amarelados, indicativo de calor hepático." /> Olhos amarelados</label><br>
+  <label><input type="checkbox" id="lacrimejamento" data-orgao="Fígado" data-dano="Estagnação de Qi" data-diagnostico="Lacrimejamento excessivo, associado à estagnação hepática." /> Lacrimejamento excessivo</label><br>
+  <label><input type="checkbox" id="olhos-secos" data-orgao="Pulmão" data-dano="Deficiência de Yin" data-diagnostico="Olhos secos, sinal de deficiência de Yin pulmonar." /> Olhos secos</label><br>
+
+  <h4>🧴 Inspeção Regional - Pele</h4>
+  <label><input type="checkbox" id="pele-seca" data-orgao="Pulmão" data-dano="Deficiência de Yin" data-diagnostico="Pele seca, indicativa de deficiência de Yin pulmonar." /> Pele seca</label><br>
+  <label><input type="checkbox" id="pele-oleosa" data-orgao="Baço" data-dano="Umidade-Calor" data-diagnostico="Pele oleosa, sinal de umidade-calor no Baço." /> Pele oleosa</label><br>
+  <label><input type="checkbox" id="erupcoes-manchas" data-orgao="Fígado" data-dano="Calor" data-diagnostico="Erupções ou manchas, indicativas de calor ou toxicidade." /> Erupções ou manchas</label><br>
+  <label><input type="checkbox" id="pele-escurecida" data-orgao="Rim" data-dano="Estase de Sangue" data-diagnostico="Pele escurecida, indicando estase sanguínea." /> Pele escurecida</label><br>
+  <label><input type="checkbox" id="coceira" data-orgao="Fígado" data-dano="Calor" data-diagnostico="Coceira, associada a calor ou vento no fígado." /> Coceira</label><br>
+
+  <h4>💇 Inspeção Regional - Cabelos</h4>
+  <label><input type="checkbox" id="cabelos-caindo" data-orgao="Rim" data-dano="Deficiência de Qi" data-diagnostico="Cabelos caindo, sinal de deficiência renal." /> Cabelos caindo</label><br>
+  <label><input type="checkbox" id="cabelos-grisalhos" data-orgao="Rim" data-dano="Deficiência de Yin" data-diagnostico="Cabelos grisalhos, indicativo de deficiência de Yin renal." /> Cabelos grisalhos</label><br>
+  <label><input type="checkbox" id="cabelos-secos-quebrados" data-orgao="Fígado" data-dano="Deficiência de Sangue" data-diagnostico="Cabelos secos e quebradiços, sinal de deficiência sanguínea." /> Cabelos secos e quebradiços</label><br>
+
+  <h4>💅 Inspeção Regional - Unhas</h4>
+  <label><input type="checkbox" id="unhas-palidas" data-orgao="Coração" data-dano="Deficiência de Sangue" data-diagnostico="Unhas pálidas, indicativo de deficiência sanguínea." /> Unhas pálidas</label><br>
+  <label><input type="checkbox" id="unhas-manchas-roxas" data-orgao="Fígado" data-dano="Estase de Sangue" data-diagnostico="Unhas com manchas roxas, sinal de estase sanguínea." /> Unhas com manchas roxas</label><br>
+  <label><input type="checkbox" id="unhas-fragil" data-orgao="Baço" data-dano="Deficiência de Qi" data-diagnostico="Unhas frágeis ou quebradiças, associadas à deficiência de Qi." /> Unhas frágeis ou quebradiças</label><br>
+  <label><input type="checkbox" id="unhas-estrias" data-orgao="Fígado" data-dano="Estagnação de Qi" data-diagnostico="Unhas com estrias, indicativo de estagnação do Qi." /> Unhas com estrias</label><br>
+
+  <h4>🦷 Inspeção Regional - Gengiva</h4>
+  <label><input type="checkbox" id="gengiva-sangrando" data-orgao="Pulmão" data-dano="Calor no Pulmão" data-diagnostico="Gengiva sangrando, sinal de calor no Pulmão." /> Gengiva sangrando</label><br>
+  <label><input type="checkbox" id="gengiva-retraida" data-orgao="Rim" data-dano="Deficiência de Yin" data-diagnostico="Gengiva retraída, indicativo de deficiência de Yin renal." /> Gengiva retraída</label><br>
+  <label><input type="checkbox" id="gengiva-inflamada" data-orgao="Pulmão" data-dano="Calor" data-diagnostico="Gengiva inchada e vermelha, sinal de calor." /> Gengiva inchada e vermelha</label><br>
+  <label><input type="checkbox" id="gengiva-palida" data-orgao="Coração" data-dano="Deficiência de Sangue" data-diagnostico="Gengiva pálida, indicativo de deficiência sanguínea." /> Gengiva pálida</label><br>
+
+  <h4>🦷 Inspeção Regional - Dentes</h4>
+  <label><input type="checkbox" id="dentes-amolecidos" data-orgao="Rim" data-dano="Deficiência de Yang" data-diagnostico="Dentes amolecidos, indicativo de deficiência renal e Yang." /> Dentes amolecidos</label><br>
+  <label><input type="checkbox" id="dentes-rangendo" data-orgao="Fígado" data-dano="Estagnação de Qi" data-diagnostico="Dentes rangendo (bruxismo), sinal de estagnação hepática." /> Dentes rangendo (bruxismo)</label><br>
+  <label><input type="checkbox" id="dentes-escurecidos" data-orgao="Fígado" data-dano="Calor" data-diagnostico="Dentes escurecidos, indicativo de calor ou toxicidade." /> Dentes escurecidos</label><br>
+
+  <h4>🗣️ Inspeção Regional - Garganta</h4>
+  <label><input type="checkbox" id="garganta-seca" data-orgao="Pulmão" data-dano="Deficiência de Yin" data-diagnostico="Garganta seca, sinal de deficiência de Yin pulmonar." /> Garganta seca</label><br>
+  <label><input type="checkbox" id="dor-garganta" data-orgao="Pulmão" data-dano="Calor" data-diagnostico="Dor na garganta, indicativo de calor e inflamação." /> Dor na garganta</label><br>
+  <label><input type="checkbox" id="rouquidao" data-orgao="Pulmão" data-dano="Calor" data-diagnostico="Rouquidão, sinal de calor no Pulmão." /> Rouquidão</label><br>
+  <label><input type="checkbox" id="no-garganta" data-orgao="Coração" data-dano="Estagnação de Qi" data-diagnostico="Sensação de "nó na garganta", associada a estagnação energética." /> Sensação de "nó na garganta"</label><br>
+
+  <h4>🦵 Inspeção Regional - Membros</h4>
+  <label><input type="checkbox" id="membros-frios" data-orgao="Rim" data-dano="Deficiência de Yang" data-diagnostico="Membros frios, indicativo de deficiência de Yang renal." /> Membros frios</label><br>
+  <label><input type="checkbox" id="membros-pesados" data-orgao="Baço" data-dano="Retenção de Umidade" data-diagnostico="Membros pesados, sinal de umidade e estagnação." /> Membros pesados</label><br>
+  <label><input type="checkbox" id="tremores" data-orgao="Fígado" data-dano="Vento Interno" data-diagnostico="Tremores, associado a vento interno do fígado." /> Tremores</label><br>
+  <label><input type="checkbox" id="formigamento" data-orgao="Fígado" data-dano="Estagnação de Qi" data-diagnostico="Formigamento, sinal de estagnação energética." /> Formigamento</label><br>
+
+  <h4>🫁 Inspeção Regional - Tórax</h4>
+  <label><input type="checkbox" id="dor-toracica" data-orgao="Coração,Pulmão" data-dano="Estagnação de Qi" data-diagnostico="Dor torácica, sinal de estagnação de Qi." /> Dor torácica</label><br>
+  <label><input type="checkbox" id="opressao-peito" data-orgao="Coração" data-dano="Deficiência de Qi" data-diagnostico="Opressão no peito, indicativo de deficiência energética cardíaca." /> Opressão no peito</label><br>
+  <label><input type="checkbox" id="aperto-emocional" data-orgao="Coração" data-dano="Estagnação de Qi" data-diagnostico="Sensação de aperto emocional, associada à estagnação do Qi." /> Sensação de aperto emocional</label><br>
+  <label><input type="checkbox" id="suspiros-frequentes" data-orgao="Pulmão" data-dano="Deficiência de Qi" data-diagnostico="Suspiros frequentes, sinal de deficiência pulmonar." /> Suspiros frequentes</label><br>
+</div>
+        </section>
+
+        <section id="tecnicas-utilizar">
+            <h2>🧰 Técnicas Terapêuticas a Utilizar</h2>
+            <p style="font-style: italic; color: #7c3aed; margin-bottom: 20px;">
+                ✨ Selecione as técnicas que deseja incluir no plano terapêutico:
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
+                <label><input type="checkbox" name="tecnica" value="Auriculoterapia"> 👂 Auriculoterapia</label>
+                <label><input type="checkbox" name="tecnica" value="Tui Na"> 💆‍♀️ Tui Na (Massagem)</label>
+                <label><input type="checkbox" name="tecnica" value="Moxabustão"> 🔥 Moxabustão</label>
+                <label><input type="checkbox" name="tecnica" value="Dietoterapia"> 🍵 Dietoterapia Chinesa</label>
+                <label><input type="checkbox" name="tecnica" value="Floral de Bach"> 🌺 Floral de Bach</label>
+            </div>
+        </section>
+
+        <div class="button-container">
+            <button id="gerar-avaliacao">🔮 Gerar Avaliação Completa</button>
+        </div>
+
+        <section id="resultado-avaliacao" class="hidden">
+            <h2>🧭 Avaliação Energética Gerada</h2>
+            <div id="dados-paciente-resultado"></div>
+            <div id="anomalias-sintomas"></div>
+            <div id="diagnostico-interpretacao"></div>
+            <div id="pontuacao-orgao"></div>
+            <div id="plano-terapeutico"></div>
+            
+            <div class="button-container">
+                <button id="salvar-historico" class="save-button hidden">💾 Salvar no Histórico</button>
+                <button id="imprimir-resultado" class="print-button">🖨️ Imprimir Resultado</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
